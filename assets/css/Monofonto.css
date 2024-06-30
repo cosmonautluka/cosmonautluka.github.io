@@ -1,0 +1,8 @@
+@font-face {
+	font-family: 'Monofonto';
+	src: url(../../assets/fonts/Monofonto-a8ae497a0be7c0665703b9d2bd95d369.woff2) format('woff2'),
+	url(../../assets/fonts/Monofonto-82edc11d0e8a30dafbe1ec0c6a4439ad.woff) format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}

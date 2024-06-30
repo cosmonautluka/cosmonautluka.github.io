@@ -1,0 +1,32 @@
+.btn {
+  margin: 10px;
+  background: var(--bs-secondary);
+  border-radius: 0;
+  --bs-secondary-rgb: 0,47,0;
+  --bs-secondary: #002f00;
+  --bs-primary-rgb: 0,238,0;
+  --bs-primary: #00ee00;
+  border-top-style: none;
+  border-right-style: none;
+  border-bottom: 2px solid rgb(0,238,0) ;
+  border-left-style: none;
+  width: 64px;
+  letter-spacing: 0px;
+}
+
+.crt {
+  background: linear-gradient(to top, #000000, #000000, #333333, #333333);
+  background-size: cover;
+  background-size: 100% 1px;
+}
+
+html {
+  background: linear-gradient(to top, #000000, #000000, #002f00, #002f00);
+  background-size: cover;
+  background-size: 100% 5px;
+}
+
+img {
+  filter: drop-shadow(0px 0px 0px #00ee00);
+}
+
