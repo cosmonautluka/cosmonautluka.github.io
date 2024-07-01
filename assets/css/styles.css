@@ -1,4 +1,7 @@
 .btn {
+  --bs-btn-disabled-color: var(--bs-success-border-subtle);
+  --bs-btn-disabled-bg: var(--bs-secondary);
+  --bs-btn-disabled-border-color: var(--bs-secondary);
   margin: 10px;
   background: var(--bs-secondary);
   border-radius: 0;
@@ -12,6 +15,9 @@
   border-left-style: none;
   width: 64px;
   letter-spacing: 0px;
+  color: var(--bs-primary);
+  --bs-btn-hover-border-color: #00ee00;
+  --bs-btn-hover-bg: #00ee00;
 }
 
 .crt {
@@ -26,7 +32,32 @@ html {
   background-size: 100% 5px;
 }
 
-img {
-  filter: drop-shadow(0px 0px 0px #00ee00);
+.nav {
+  --bs-nav-link-padding-x: 1rem;
+  --bs-nav-link-padding-y: 0.5rem;
+  --bs-nav-link-color: var(--bs-link-color);
+  --bs-nav-link-hover-color: var(--bs-link-hover-color);
+  --bs-nav-link-disabled-color: var(--bs-secondary-color);
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.nav-pills {
+  --bs-nav-pills-border-radius: 0;
+  --bs-nav-pills-link-active-color: var(--bs-link-hover-color);
+  --bs-nav-pills-link-active-border-style: solid;
+  --bs-nav-pills-link-active-border-color: var(--bs-link-hover-color);
+  --bs-nav-pills-link-active-border-width: 2px;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  border-style: var(--bs-nav-pills-link-active-border-style);
+  border-color: #00ee00;
+  border-width: 2px;
+  color: var(--bs-nav-pills-link-active-color);
+  background: transparent;
 }
 

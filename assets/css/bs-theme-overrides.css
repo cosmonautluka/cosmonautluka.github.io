@@ -1,0 +1,7 @@
+:root, [data-bs-theme=light] {
+  --bs-link-color: #00ee00;
+  --bs-link-color-rgb: 0,238,0;
+  --bs-link-hover-color: #00ee00;
+  --bs-link-hover-color-rgb: 0,238,0;
+}
+
