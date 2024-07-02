@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Pipboy</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee&amp;display=swap">
+    <link rel="stylesheet" href="assets/css/Monofonto.css">
+    <link rel="stylesheet" href="assets/css/bs-theme-overrides.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body style="background: transparent;">
+    <div class="container">
+        <h1 style="text-align: center;color: var(--bs-link-hover-color);">Assign Attribute Scores</h1>
+        <div class="row justify-content-center">
+            <div class="col-auto" style="width: 14%;">
+                <div class="row">
+                    <div class="col">
+                        <h3 class="text-nowrap text-center" style="color: var(--bs-link-hover-color);">Strength</h3>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col align-self-center" style="text-align: center;"><select style="text-align: center;border-width: 3px;" id="strength">
+    <optgroup label="Strength choice">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5" selected>5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </optgroup>
+</select></div>
+                </div>
+            </div>
+            <div class="col-auto" style="width: 14%;">
+                <div class="row">
+                    <div class="col">
+                        <h3 class="text-nowrap text-center" style="color: var(--bs-link-hover-color);">Perception</h3>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col align-self-center" style="text-align: center;"><select style="text-align: center;border-width: 3px;" id="perception">
+    <optgroup label="Perception choice">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5" selected>5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </optgroup>
+</select></div>
+                </div>
+            </div>
+            <div class="col-auto" style="width: 14%;">
+                <div class="row">
+                    <div class="col">
+                        <h3 class="text-nowrap text-center" style="color: var(--bs-link-hover-color);">Endurance</h3>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col align-self-center" style="text-align: center;"><select style="text-align: center;border-width: 3px;" id="endurance">
+    <optgroup label="Endurance choice">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5" selected>5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </optgroup>
+</select></div>
+                </div>
+            </div>
+            <div class="col-auto" style="width: 14%;">
+                <div class="row">
+                    <div class="col">
+                        <h3 class="text-nowrap text-center" style="color: var(--bs-link-hover-color);">Charisma</h3>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col align-self-center" style="text-align: center;"><select style="text-align: center;border-width: 3px;" id="charisma">
+    <optgroup label="Charisma choice">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5" selected>5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </optgroup>
+</select></div>
+                </div>
+            </div>
+            <div class="col-auto" style="width: 14%;">
+                <div class="row">
+                    <div class="col">
+                        <h3 class="text-nowrap text-center" style="color: var(--bs-link-hover-color);">Intelligence</h3>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col align-self-center" style="text-align: center;"><select style="text-align: center;border-width: 3px;" id="intelligence">
+    <optgroup label="Intelligence choice">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5" selected>5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </optgroup>
+</select></div>
+                </div>
+            </div>
+            <div class="col-auto" style="width: 14%;">
+                <div class="row">
+                    <div class="col">
+                        <h3 class="text-nowrap text-center" style="color: var(--bs-link-hover-color);">Agility</h3>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col align-self-center" style="text-align: center;"><select style="text-align: center;border-width: 3px;" id="agility">
+    <optgroup label="Agility choice">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5" selected>5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </optgroup>
+</select></div>
+                </div>
+            </div>
+            <div class="col-auto" style="width: 14%;">
+                <div class="row">
+                    <div class="col">
+                        <h3 class="text-nowrap text-center" style="color: var(--bs-link-hover-color);">Luck</h3>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col align-self-center" style="text-align: center;"><select style="text-align: center;border-width: 3px;" id="luck">
+    <optgroup label="Luck choice">
+        <option value="1" selected>1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5" selected>5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </optgroup>
+</select></div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center" style="margin-top: 30px;border-top: 2px solid var(--bs-link-hover-color) ;border-right: 1px solid var(--bs-link-hover-color) ;">
+            <div class="col-8">
+                <div class="row">
+                    <div class="col">
+                        <h2 style="text-align: center;color: var(--bs-link-hover-color);margin-top: 10px;">Select skill bonus</h2>
+                        <div class="row">
+                            <div class="col text-center"><select style="text-align: center;border-width: 3px;width: 90%;" id="skill-1">
+    <optgroup label="skill choice 1">
+        <option value="1">Barter</option>
+        <option value="2">Breach</option>
+        <option value="3">Crafting</option>
+        <option value="4" selected>Energy Weapons</option>
+        <option value="5">Explosives</option>
+        <option value="6">Guns</option>
+        <option value="7">Intimidation</option>
+        <option value="8">Medicine</option>
+        <option value="9">Melee Weapons</option>
+        <option value="10">Science</option>
+        <option value="11">Sneak</option>
+        <option value="12">Speech</option>
+        <option value="13">Survival</option>
+        <option value="14">Unarmed</option>
+    </optgroup>
+</select></div>
+                            <div class="col text-center"><select style="text-align: center;border-width: 3px;width: 90%;" id="skill-2">
+    <optgroup label="skill choice 2">
+        <option value="1">Barter</option>
+        <option value="2">Breach</option>
+        <option value="3">Crafting</option>
+        <option value="4" selected>Energy Weapons</option>
+        <option value="5">Explosives</option>
+        <option value="6">Guns</option>
+        <option value="7">Intimidation</option>
+        <option value="8">Medicine</option>
+        <option value="9">Melee Weapons</option>
+        <option value="10">Science</option>
+        <option value="11">Sneak</option>
+        <option value="12">Speech</option>
+        <option value="13">Survival</option>
+        <option value="14">Unarmed</option>
+    </optgroup>
+</select></div>
+                            <div class="col text-center"><select style="text-align: center;border-width: 3px;width: 90%;" id="skill-3">
+    <optgroup label="skill choice 3">
+        <option value="1">Barter</option>
+        <option value="2">Breach</option>
+        <option value="3">Crafting</option>
+        <option value="4" selected>Energy Weapons</option>
+        <option value="5">Explosives</option>
+        <option value="6">Guns</option>
+        <option value="7">Intimidation</option>
+        <option value="8">Medicine</option>
+        <option value="9">Melee Weapons</option>
+        <option value="10">Science</option>
+        <option value="11">Sneak</option>
+        <option value="12">Speech</option>
+        <option value="13">Survival</option>
+        <option value="14">Unarmed</option>
+    </optgroup>
+</select></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center justify-content-center" style="margin-top: 30px;">
+            <div class="col" style="border-top: 2px solid var(--bs-link-hover-color) ;border-right: 1px solid var(--bs-link-hover-color) ;"><button class="btn btn-primary text-nowrap" type="button" style="margin-top: 30px; width: 15%;" onclick = "calc()" >Press to Calculate</button></div>
+        </div>
+        <div class="row" style="border-top: 2px solid var(--bs-link-hover-color);border-right: 1px solid var(--bs-link-hover-color);margin-top: 30px;">
+            <div class="col">
+                <h1 style="text-align: center;color: var(--bs-link-hover-color);margin-top: 10px;">Calculated Values</h1>
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col align-self-center">
+                                <h5 class="text-end" style="color: var(--bs-link-hover-color);">Barter</h5>
+                            </div>
+                            <div class="col align-self-center">    <h5 class="text-start" style="color: var(--bs-link-hover-color);" id="barter">0</h5>
+</div>
+                        </div>
+                        <div class="row">
+                            <div class="col align-self-center">
+                                <h5 class="text-end" style="color: var(--bs-link-hover-color);">Breach</h5>
+                            </div>
+                            <div class="col align-self-center">    <h5 class="text-start" style="color: var(--bs-link-hover-color);" id="breach">0</h5>
+</div>
+                        </div>
+                        <div class="row">
+                            <div class="col align-self-center">
+                                <h5 class="text-end" style="color: var(--bs-link-hover-color);">Crafting</h5>
+                            </div>
+                            <div class="col align-self-center">    <h5 class="text-start" style="color: var(--bs-link-hover-color);" id="crafting">0</h5>
+</div>
+                        </div>
+                        <div class="row">
+                            <div class="col align-self-center">
+                                <h5 class="text-end" style="color: var(--bs-link-hover-color);">Energy Weapons</h5>
+                            </div>
+                            <div class="col align-self-center">    <h5 class="text-start" style="color: var(--bs-link-hover-color);" id="energy-weapons">0</h5>
+</div>
+                        </div>
+                        <div class="row">
+                            <div class="col align-self-center">
+                                <h5 class="text-end" style="color: var(--bs-link-hover-color);">Explosives</h5>
+                            </div>
+                            <div class="col align-self-center">    <h5 class="text-start" style="color: var(--bs-link-hover-color);" id="explosives">0</h5>
+</div>
+                        </div>
+                        <div class="row">
+                            <div class="col align-self-center">
+                                <h5 class="text-end" style="color: var(--bs-link-hover-color);">Guns</h5>
+                            </div>
+                            <div class="col align-self-center">    <h5 class="text-start" style="color: var(--bs-link-hover-color);" id="guns">0</h5>
+</div>
+                        </div>
+                        <div class="row">
+                            <div class="col align-self-center">
+                                <h5 class="text-end" style="color: var(--bs-link-hover-color);">Intimidation</h5>
+                            </div>
+                            <div class="col align-self-center">    <h5 class="text-start" style="color: var(--bs-link-hover-color);" id="intimidation">0</h5>
+</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col align-self-center">
+                                <h5 class="text-end" style="color: var(--bs-link-hover-color);">Medicine</h5>
+                            </div>
+                            <div class="col align-self-center">    <h5 class="text-start" style="color: var(--bs-link-hover-color);" id="medicine">0</h5>
+</div>
+                        </div>
+                        <div class="row">
+                            <div class="col align-self-center">
+                                <h5 class="text-end" style="color: var(--bs-link-hover-color);">Melee Weapons</h5>
+                            </div>
+                            <div class="col align-self-center">    <h5 class="text-start" style="color: var(--bs-link-hover-color);" id="melee-weapons">0</h5>
+</div>
+                        </div>
+                        <div class="row">
+                            <div class="col align-self-center">
+                                <h5 class="text-end" style="color: var(--bs-link-hover-color);">Science</h5>
+                            </div>
+                            <div class="col align-self-center">    <h5 class="text-start" style="color: var(--bs-link-hover-color);" id="science">0</h5>
+</div>
+                        </div>
+                        <div class="row">
+                            <div class="col align-self-center">
+                                <h5 class="text-end" style="color: var(--bs-link-hover-color);">Sneak</h5>
+                            </div>
+                            <div class="col align-self-center">    <h5 class="text-start" style="color: var(--bs-link-hover-color);" id="sneak">0</h5>
+</div>
+                        </div>
+                        <div class="row">
+                            <div class="col align-self-center">
+                                <h5 class="text-end" style="color: var(--bs-link-hover-color);">Speech</h5>
+                            </div>
+                            <div class="col align-self-center">    <h5 class="text-start" style="color: var(--bs-link-hover-color);" id="speech">0</h5>
+</div>
+                        </div>
+                        <div class="row">
+                            <div class="col align-self-center">
+                                <h5 class="text-end" style="color: var(--bs-link-hover-color);">Survival</h5>
+                            </div>
+                            <div class="col align-self-center">    <h5 class="text-start" style="color: var(--bs-link-hover-color);" id="survival">0</h5>
+</div>
+                        </div>
+                        <div class="row">
+                            <div class="col align-self-center">
+                                <h5 class="text-end" style="color: var(--bs-link-hover-color);">Unarmed</h5>
+                            </div>
+                            <div class="col align-self-center">    <h5 class="text-start" style="color: var(--bs-link-hover-color);" id="unarmed">0</h5>
+</div>
+                        </div>
+                    </div>
+                    <div class="col align-self-center">
+                        <div class="row">
+                            <div class="col align-self-center">
+                                <h5 class="text-end" style="color: var(--bs-link-hover-color);">Stamina Points</h5>
+                            </div>
+                            <div class="col align-self-center">    <h5 class="text-start" style="color: var(--bs-link-hover-color);" id="SP">0</h5>
+</div>
+                        </div>
+                        <div class="row">
+                            <div class="col align-self-center">
+                                <h5 class="text-end" style="color: var(--bs-link-hover-color);">Hit Points</h5>
+                            </div>
+                            <div class="col align-self-center">    <h5 class="text-start" style="color: var(--bs-link-hover-color);" id="HP">0</h5>
+</div>
+                        </div>
+                        <div class="row">
+                            <div class="col align-self-center">
+                                <h5 class="text-end" style="color: var(--bs-link-hover-color);">Healing Rate</h5>
+                            </div>
+                            <div class="col align-self-center">    <h5 class="text-start" style="color: var(--bs-link-hover-color);" id="heal">0</h5>
+</div>
+                        </div>
+                        <div class="row">
+                            <div class="col align-self-center">
+                                <h5 class="text-end" style="color: var(--bs-link-hover-color);">Carry Load</h5>
+                            </div>
+                            <div class="col align-self-center">    <h5 class="text-start" style="color: var(--bs-link-hover-color);" id="CL">0</h5>
+</div>
+                        </div>
+                        <div class="row">
+                            <div class="col align-self-center">
+                                <h5 class="text-end" style="color: var(--bs-link-hover-color);">Action Points</h5>
+                            </div>
+                            <div class="col align-self-center">    <h5 class="text-start" style="color: var(--bs-link-hover-color);" id="AP">0</h5>
+</div>
+                        </div>
+                        <div class="row">
+                            <div class="col align-self-center">
+                                <h5 class="text-end" style="color: var(--bs-link-hover-color);">Passive Sense</h5>
+                            </div>
+                            <div class="col align-self-center">    <h5 class="text-start" style="color: var(--bs-link-hover-color);" id="PS">0</h5>
+</div>
+                        </div>
+                        <div class="row">
+                            <div class="col align-self-center">
+                                <h5 class="text-end" style="color: var(--bs-link-hover-color);">Radiation DC</h5>
+                            </div>
+                            <div class="col align-self-center">    <h5 class="text-start" style="color: var(--bs-link-hover-color);" id="RDC">0</h5>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/calculator.js"></script>
+</body>
+
+</html>
