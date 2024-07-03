@@ -76,3 +76,8 @@ select {
   font-size: 22px;
 }
 
+#map {
+  background: transparent;
+  outline: 0;
+}
+

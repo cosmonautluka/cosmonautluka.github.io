@@ -10,9 +10,825 @@
     <link rel="stylesheet" href="assets/css/Monofonto.css">
     <link rel="stylesheet" href="assets/css/bs-theme-overrides.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<style> #map { height: 500px; width: 800px; } </style>
 </head>
 
-<body>
+<body style="background: transparent;">
+    <div class="card bg-transparent" style="font-family: Monofonto;">
+        <div class="card-body" style="padding-top: 8px;">
+            <div id="nav-tabContent" class="tab-content">
+                <div id="stats" class="tab-pane fade show active" role="tabpanel" aria-labelledby="stats-tab">
+                    <div class="card bg-transparent">
+                        <div class="card-header" style="padding-right: 0px;padding-left: 0px;padding-top: 0px;">
+                            <nav class="navbar navbar-expand" style="background: transparent;padding-top: 0px;">
+                                <div class="container">
+                                    <div class="row g-0 justify-content-between" style="width: 100%;">
+                                        <div class="col-2 text-truncate align-self-center">
+                                            <h1 class="text-center" style="margin: 10%;color: #00ee00;border-style: solid;font-family: Monofonto;font-size: 200%;">STATS</h1>
+                                        </div>
+                                        <div class="col-2 align-self-center">
+                                            <h1 class="text-truncate text-center" style="margin: 10%;color: #00ee00;font-family: Monofonto;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;font-size: 150%;">LVL 1</h1>
+                                        </div>
+                                        <div class="col-2 align-self-center">
+                                            <h1 class="text-truncate text-center" style="margin: 10%;color: #00ee00;font-family: Monofonto;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;font-size: 150%;">SP 10/10</h1>
+                                        </div>
+                                        <div class="col-2 align-self-center">
+                                            <h1 class="text-truncate text-center" style="margin: 10%;color: #00ee00;font-family: Monofonto;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;font-size: 150%;">HP 10/10</h1>
+                                        </div>
+                                        <div class="col-2 align-self-center">
+                                            <h1 class="text-truncate text-center" style="margin: 10%;color: #00ee00;font-family: Monofonto;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;font-size: 150%;">AP 10/10</h1>
+                                        </div>
+                                        <div class="col-2 align-self-center">
+                                            <h1 class="text-truncate text-center" style="margin: 10%;color: #00ee00;font-family: Monofonto;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;font-size: 150%;">XP 0/1000</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="card-body">
+                            <div id="nav-tabContent-1" class="tab-content">
+                                <div id="status" class="tab-pane fade show active" role="tabpanel" aria-labelledby="status-tab">
+                                    <div class="container">
+                                        <div class="row text-center justify-content-center align-items-center" style="color: #00ee00;">
+                                            <div class="col-3 text-nowrap text-start align-self-center" style="padding-bottom: 0px;margin-bottom: -50px;">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <h4 style="margin-top: 10px;">Level of Hunger - N/A</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="margin-top: 10px;">
+                                                    <div class="col" style="margin-top: 10px;">
+                                                        <h4 style="margin-top: 10px;">Level of Dehydration - N/A</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="margin-top: 10px;">
+                                                    <div class="col" style="margin-top: 10px;">
+                                                        <h4 style="margin-top: 10px;">Level of Exhaustion - 0</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="margin-top: 10px;">
+                                                    <div class="col" style="margin-top: 10px;">
+                                                        <h4 style="margin-top: 10px;">Level of Fatigue - 0</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="margin-top: 10px;">
+                                                    <div class="col" style="margin-top: 10px;">
+                                                        <h4 style="margin-top: 10px;">Radiation DC - N/A</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="margin-top: 10px;">
+                                                    <div class="col" style="margin-top: 10px;">
+                                                        <h4 style="margin-top: 10px;">Level of Radiation - N/A</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 align-self-center" style="padding-bottom: 0px;margin-bottom: -50px;"><img class="img-fluid" src="assets/img/dutch.png" style="margin-top: -5%;"></div>
+                                            <div class="col-3 text-nowrap text-start align-self-center" style="padding-bottom: 0px;margin-bottom: -50px;">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <h4 style="margin-top: 10px;">Healing Rate - 3</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="margin-top: 10px;">
+                                                    <div class="col" style="margin-top: 10px;">
+                                                        <h4 style="margin-top: 10px;">Combat Sequence - 5</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="margin-top: 10px;">
+                                                    <div class="col" style="margin-top: 10px;">
+                                                        <h4 style="margin-top: 10px;">Action Points - 10</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="margin-top: 10px;">
+                                                    <div class="col" style="margin-top: 10px;">
+                                                        <h4 style="margin-top: 10px;">Passive Sense - 12</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="margin-top: 10px;">
+                                                    <div class="col" style="margin-top: 10px;">
+                                                        <h4 style="margin-top: 10px;">Party Nerve - 0</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="margin-top: 10px;">
+                                                    <div class="col" style="margin-top: 10px;">
+                                                        <h4 style="margin-top: 10px;">Group Sneak - 0</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row text-center justify-content-center align-items-center">
+                                            <div class="col">
+                                                <h1 class="text-center" style="color: #00ee00;font-family: Monofonto;font-size: 200%;"><span style="text-decoration: underline;">Dutch</span></h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="special" class="tab-pane fade" role="tabpanel" aria-labelledby="special-tab">
+                                    <div class="container" style="margin-top: -5%;">
+                                        <div class="row text-center justify-content-center align-items-center">
+                                            <div class="col-4 text-start align-self-center" style="padding-bottom: 0px;margin-bottom: -50px;">
+                                                <ul class="nav nav-pills flex-column" role="tablist">
+                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link active" id="strength-tab" role="tab" aria-controls="strength" aria-selected="true" href="#strength" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Strength - 5 - (0)</a></li>
+                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link" id="perception-tab" role="tab" aria-controls="perception" aria-selected="false" href="#perception" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Perception - 5 - (0)</a></li>
+                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link" id="endurance-tab" role="tab" aria-controls="endurance" aria-selected="false" href="#endurance" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Endurance - 5 - (0)</a></li>
+                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link" id="charisma-tab" role="tab" aria-controls="charisma" aria-selected="false" href="#charisma" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Charisma - 5 - (0)</a></li>
+                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link" id="intelligence-tab" role="tab" aria-controls="intelligence" aria-selected="false" href="#intelligence" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Intelligence - 5 - (0)</a></li>
+                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link" id="agility-tab" role="tab" aria-controls="agility" aria-selected="false" href="#agility" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Agility - 5 - (0)</a></li>
+                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link" id="luck-tab" role="tab" aria-controls="luck" aria-selected="false" href="#luck" data-bs-toggle="tab">Luck - 5 - (0)</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="card bg-transparent">
+                                                    <div class="card-body">
+                                                        <div id="nav-tabContent-2" class="tab-content">
+                                                            <div id="strength" class="tab-pane fade show active" role="tabpanel" aria-labelledby="strength-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/Strength.png"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col" style="margin-top: -80px;">
+                                                                        <h1 style="color: #00ee00;">Average Joe</h1>
+                                                                        <p class="text-start" style="color: #00ee00;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;">Raw physical power. A high Strength increases your hit and damage with melee weapons and unarmed attacks. It’s also a great scare tactic against anyone. But most importantly, Strength measures your ability to handle any weapon and carry your equipment across the wasteland. All weapons have a Strength requirement, and if you fail to meet it you’ll have disadvantage to all your attack rolls with the weapon. If you have a low Strength, opt for lighter weapons. Having a low Strength will also significantly reduce your Carry Load, but a high one will allow you to carry lots of stuff.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="perception" class="tab-pane fade" role="tabpanel" aria-labelledby="perception-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/Perception.png"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col" style="margin-top: -80px;">
+                                                                        <h1 style="color: #00ee00;">Wary Trout</h1>
+                                                                        <p class="text-start" style="color: #00ee00;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;">Your senses, your insight into others, your ability to notice, and your attention to detail. Your body can be strong or quick, but it’s nothing if you don’t take notice. Perception is also a measurement of how quick you can act under pressure. You’ll act first in combat with a high perception, and heal others easier when you know what’s important first. Damage and attack rolls with Energy Weapons are measured by Perception, as with their auto-aiming and wide beam-like capabilities, you only need to know where your target is to hit them. Perception also affects your range with all ranged weapons. A high Perception can allow you to shoot far, while a low one will decrease your range.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="endurance" class="tab-pane fade" role="tabpanel" aria-labelledby="endurance-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/Endurance.png"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col" style="margin-top: -80px;">
+                                                                        <h1 style="color: #00ee00;">Stain-Resistant</h1>
+                                                                        <p class="text-start" style="color: #00ee00;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;">Your physical toughness, your ability to hold out. Characters with high endurance often never give up. Gritting their teeth with their power of determination to survive. This allows you to know more about the hardships of the wasteland and how to use them to your best abilities. A high Endurance gives you more hit points allowing you to survive longer. Your Endurance also affects your Healing Rate and Radiation DC. Having a low Endurance will make you more susceptible to the negative effects of radiation and even gets you closer to death in the wasteland.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="charisma" class="tab-pane fade" role="tabpanel" aria-labelledby="charisma-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/Charisma.png"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col" style="margin-top: -80px;">
+                                                                        <h1 style="color: #00ee00;">Substitute Teacher</h1>
+                                                                        <p class="text-start" style="color: #00ee00;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;">Your force of personality, everything that makes you, you. Charisma measures your ability to understand others, while also being a master of communication. Charisma makes for great leaders and powerful negotiators. A high Charisma also increases your Party Nerve, which increases your party’s perseverance by gaining temporary stamina points and a bonus to Death Saves.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="intelligence" class="tab-pane fade" role="tabpanel" aria-labelledby="intelligence-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/Intelligence.png"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col" style="margin-top: -60px;">
+                                                                        <h1 style="color: #00ee00;">Knowledgeable</h1>
+                                                                        <p class="text-start" style="color: #00ee00;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;">Reasoning, knowledge, and memory. Intelligence measures sheer brain power and your know-how of everything. Computers, biology, cosmology, physics, equations, mechanics, engineering, and anything Scientific related is measured by Intelligence. A high Intelligence score will net you more skill points when you level up, while a lower Intelligence gives you less. A high Intelligence also allows you to craft more items like weapons, mods, and armor upgrades.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="agility" class="tab-pane fade" role="tabpanel" aria-labelledby="agility-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/Agility.png"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col" style="margin-top: -80px;">
+                                                                        <h1 style="color: #00ee00;">Under Control</h1>
+                                                                        <p class="text-start" style="color: #00ee00;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;">Quickness and dexterity. Agility measures your character's speed and accuracy. Your Agility also measures your ability to dodge and stay focused in combat, granting you your SP. Your ability to move quietly and act inconspicuously is measured by Agility. Attack and damage rolls with pistols, shotguns, rifles, big guns, and SMGs are all modified by your Agility. Having a high Agility score grants you more AP, allowing you to do more in a turn during combat, while a low Agility will give you less.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="luck" class="tab-pane fade" role="tabpanel" aria-labelledby="luck-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/Luck.png"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col" style="margin-top: -80px;">
+                                                                        <h1 style="color: #00ee00;">Coin Flip</h1>
+                                                                        <p class="text-start" style="color: #00ee00;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;">Fate, Karma, and Fortune. It’s difficult to measure one’s Luck, but in the wasteland the universe itself judges individuals by their Luck. A general catch-all skill, your Luck can affect almost everything. Coming back from the dead relies on your Luck as you add your modifier to Death Saves. Finding loot, equipment, or anything in the wasteland is measured by your Luck. Having a high Luck score grants a bonus to all your Skills, and raises your chance to critically hit on all weapons.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="skills" class="tab-pane fade" role="tabpanel" aria-labelledby="item-1-3-tab">
+                                    <div class="container">
+                                        <div class="row text-center justify-content-center align-items-center">
+                                            <div class="col-4 align-self-center" style="padding-bottom: 0px;margin-bottom: -50px;">
+                                                <ul class="nav nav-pills text-start flex-column" role="tablist">
+                                                    <li class="nav-item"><a class="nav-link active" id="barter-tab" role="tab" aria-controls="barter" aria-selected="true" href="#barter" data-bs-toggle="tab">Barter - (0)</a></li>
+                                                    <li class="nav-item"><a class="nav-link" id="breach-tab" role="tab" aria-controls="breach" aria-selected="false" href="#breach" data-bs-toggle="tab">Breach - (0)</a></li>
+                                                    <li class="nav-item"><a class="nav-link" id="crafting-tab" role="tab" aria-controls="crafting" aria-selected="false" href="#crafting" data-bs-toggle="tab">Crafting - (0)</a></li>
+                                                    <li class="nav-item"><a class="nav-link" id="energy-weapons-tab" role="tab" aria-controls="energy-weapons" aria-selected="false" href="#energy-weapons" data-bs-toggle="tab">Energy Weapons - (0)</a></li>
+                                                    <li class="nav-item"><a class="nav-link" id="explosives-tab" role="tab" aria-controls="explosives" aria-selected="false" href="#explosives" data-bs-toggle="tab">Explosives - (0)</a></li>
+                                                    <li class="nav-item"><a class="nav-link" id="guns-tab" role="tab" aria-controls="guns" aria-selected="false" href="#guns" data-bs-toggle="tab">Guns - (0)</a></li>
+                                                    <li class="nav-item"><a class="nav-link" id="intimidation-tab" role="tab" aria-controls="intimidation" aria-selected="false" href="#intimidation" data-bs-toggle="tab">Intimidation - (0)</a></li>
+                                                    <li class="nav-item"><a class="nav-link" id="medicine-tab" role="tab" aria-controls="medicine" aria-selected="false" href="#medicine" data-bs-toggle="tab">Medicine (0)</a></li>
+                                                    <li class="nav-item"><a class="nav-link" id="melee-weapons-tab" role="tab" aria-controls="melee-weapons" aria-selected="false" href="#melee-weapons" data-bs-toggle="tab">Melee Weapons - (0)</a></li>
+                                                    <li class="nav-item"><a class="nav-link" id="science-tab" role="tab" aria-controls="science" aria-selected="false" href="#science" data-bs-toggle="tab">Science - (0)</a></li>
+                                                    <li class="nav-item"><a class="nav-link" id="sneak-tab" role="tab" aria-controls="sneak" aria-selected="false" href="#sneak" data-bs-toggle="tab">Sneak - (0)</a></li>
+                                                    <li class="nav-item"><a class="nav-link" id="speech-tab" role="tab" aria-controls="speech" aria-selected="false" href="#speech" data-bs-toggle="tab">Speech - (0)</a></li>
+                                                    <li class="nav-item"><a class="nav-link" id="survival-tab" role="tab" aria-controls="survival" aria-selected="false" href="#survival" data-bs-toggle="tab">Survival - (0)</a></li>
+                                                    <li class="nav-item"><a class="nav-link" id="unarmed-tab" role="tab" aria-controls="unarmed" aria-selected="false" href="#unarmed" data-bs-toggle="tab">Unarmed - (0)</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="card bg-transparent" style="margin-top: -80px;margin-bottom: 20px;">
+                                                    <div class="card-body">
+                                                        <div id="nav-tabContent-3" class="tab-content">
+                                                            <div id="barter" class="tab-pane fade show active" role="tabpanel" aria-labelledby="barter-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/barter.png"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col" style="margin-top: -80px;">
+                                                                        <p class="text-start" style="color: #00ee00;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;">The Barter skill measures your expertise in trade. Whether that be with merchants when trading valuables, or with powerful figures to discuss terms. Barter encompasses all manner of exchange, this for that. The higher your Barter skill, the more convincing you are when it comes to sweetening your deals. You can also use this skill with a unique ability called Discount: When you purchase an item from a merchant with any kind of currency, you can gain a percentage discount equal to your Barter skill bonus on that item. Once you use this ability, you cannot use it again until you rest for 8 hours.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="breach" class="tab-pane fade" role="tabpanel" aria-labelledby="breach-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/breach.png"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col" style="margin-top: -80px;">
+                                                                        <p class="text-start" style="color: #00ee00;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;">The Breach skill measures your ability to open locks, hack computers, disarm traps, or anything that lets you get to places you’re not supposed to. Whenever you make a Breach check, you can re-roll the check a number of times equal to your Luck modifier (up to GM’s discretion). You can optionally choose for your Breach skill to be modified by your Perception modifier instead of Intelligence.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="crafting" class="tab-pane fade" role="tabpanel" aria-labelledby="crafting-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/crafting.png"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col" style="margin-top: -80px;">
+                                                                        <p class="text-start" style="color: #00ee00;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;">The Crafting skill measures your knowledge of schematics to repair and craft items. To craft most weapons, armor, mods, and upgrades; your Crafting skill must be equal to or more than its requirement. If you do not meet the requirement, you can roll a Crafting skill check with the DC being 12 + the Crafting skill requirement bonus. On a success you craft the items, on a failure you do not craft the items and you use half of your choice of the required materials. If an item has a level of Decay, you can use your Crafting skill to repair it and emove the level of Decay. The requirements to repair items are listed on the crafting tables on page 1.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="energy-weapons" class="tab-pane fade" role="tabpanel" aria-labelledby="energy-weapons-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/energy_weapons.png"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col" style="margin-top: -80px;">
+                                                                        <p class="text-start" style="color: #00ee00;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;">The Energy Weapons skill measures your expertise in the use of technological weapons that shoot powerful lasers, flash arcs of electricity, fire superheated bolts of plasma, and even launch ammo with electromagnetic coils to accelerate projectiles at extreme velocities. When you make an attack roll with an energy weapon, you add your Energy Weapons skill bonus to the attack roll.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="explosives" class="tab-pane fade" role="tabpanel" aria-labelledby="explosives-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/explosives.png"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col" style="margin-top: -80px;">
+                                                                        <p class="text-start" style="color: #00ee00;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;">The Explosives skill measures your know-how in arming, disarming, and overall handling of any explosive device. Whether that be a fragmentation grenade, C-4 explosive, molotov cocktail, plasma grenade, or smoke bomb. When you use your AP to arm and throw an explosive, roll a d20 and add your explosives skill bonus. If the total is a 1, the explosive detonates immediately before you throw it. If the total is a 2 or 3, the explosive is thrown half the distance and detonates at the start of your next turn. If the total is between 3 and 14, the explosive detonates at the start of your next turn. If the result is a 15 or higher, the explosive detonates at the end of your turn. When you use your AP to throw an explosive that has already been armed, roll an Explosives check. If the result is a 12 or below, the explosive is not thrown and explodes immediately. If the result is above an 13, the explosive detonates at the end of your turn.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="guns" class="tab-pane fade" role="tabpanel" aria-labelledby="guns-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/guns.png"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col" style="margin-top: -80px;">
+                                                                        <p class="text-start" style="color: #00ee00;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;">The Guns skill measures your ability to wield and shoot all manner of firearms. From revolvers, to snipers rifles, to mini-guns. When you make an attack roll with a big gun, handgun, rifle, shotgun, or submachine gun you add your Guns skill bonus to the attack roll.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="intimidation" class="tab-pane fade" role="tabpanel" aria-labelledby="intimidation-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/intimidate.png"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col" style="margin-top: -80px;">
+                                                                        <p class="text-start" style="color: #00ee00;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;">The Intimidation skill measures how threatening you can be, your ability to frighten others, or even make them re-evaluate confronting you. You can optionally choose for your Intimidation skill to be modified by your Charisma modifier instead of Strength.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="medicine" class="tab-pane fade" role="tabpanel" aria-labelledby="medicine-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/medicine.png"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col" style="margin-top: -80px;">
+                                                                        <p class="text-start" style="color: #00ee00;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;">The Medicine skill measures your aptitude for accessing symptoms and properly treating them with care while under pressure. Knowledge of Medicine also allows you to craft chems. To craft most chem recipes, your Medicine skill must be equal to or more than its requirement. If you are within 5 feet of a creature with the bleeding condition, you can spend 6 AP, use 1 cloth junk item, and succeed a DC 15 Medicine skill check to end the condition. If another character is dying and has not failed all of their Death Saves, you can (at GM’s discretion) spend 6 AP to make a Medicine check with the DC being 10 + their failed Death Saves and - their successful Death Saves. On a success the creature gains 1 hit point. You can optionally choose for your Medicine skill to be modified by your Perception modifier instead of Intelligence.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="melee-weapons" class="tab-pane fade" role="tabpanel" aria-labelledby="melee-weapons-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/melee-weapons.png"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col" style="margin-top: -80px;">
+                                                                        <p class="text-start" style="color: #00ee00;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;">The Melee Weapons skill measures your ability to chop, stab, or bludgeon with weapons such as knives, boards, nine-irons, or even chainsaws. When you make an attack roll with a melee weapon, you add your Melee Weapons skill bonus to the attack roll.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="science" class="tab-pane fade" role="tabpanel" aria-labelledby="science-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/science.png"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col" style="margin-top: -80px;">
+                                                                        <p class="text-start" style="color: #00ee00;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;">The Science skill measures your knowledge and deductive reasoning for all kinds of studies. Biology, historiography, cosmology, chemistry, geology, etc. You can use the Science skill to craft theories and produce a likely outcome. If your character ever encounters something mysterious, you can make a Science skill check to deduce the reasoning. Alternatively, if your GM allows it, you can ask the GM a question about a specific subject that you may not know the answer to, but your character might. On a successful roll you may learn the information.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="sneak" class="tab-pane fade" role="tabpanel" aria-labelledby="sneak-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/sneak.png"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col" style="margin-top: -80px;">
+                                                                        <p class="text-start" style="color: #00ee00;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;">The Sneak skill measures your ability to remain quiet or inconspicuous. On your turn you can spend 6 AP to hide. When you hide you roll a Sneak skill check, if you have cover against any creatures and your Sneak skill check total is equal to or greater than their passive Perception, then you are hidden from them and they cannot see you. If you attack a creature who you are hidden from, you gain advantage on the attack roll. If a creature is aware of your presence, but cannot see you because you are hidden, they may make a Perception check contested against a Sneak check from you. If their total is higher, you are no longer hidden. If your total is higher, then you remain hidden. Player characters, while traveling, can move at half pace and use their Group Sneak to remain stealthy while traveling. Your Group Sneak is equal to each player character’s Sneak modifier divided by the number of player characters. (Simply put; Group Sneak is the mean, or average, Sneak modifier of each player character).</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="speech" class="tab-pane fade" role="tabpanel" aria-labelledby="speech-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/speech.png"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col" style="margin-top: -80px;">
+                                                                        <p class="text-start" style="color: #00ee00;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;">The Speech skill measures your ability to communicate and to read others. Speech encompasses your ability to persuade, dissuade, convince, or deceive. Knowledge of language, oratory, and expression also falls under Speech. You can use the Speech skill to convince non-player characters to agree with you, perform a favor for you, or even risk their life for you (at GM’s discretion). You can also use Speech to tell a convincing lie, read the intentions of someone who may have ill-intent towards you, or to communicate non-verbally.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="survival" class="tab-pane fade" role="tabpanel" aria-labelledby="survival-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/survival.png"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col" style="margin-top: -80px;">
+                                                                        <p class="text-start" style="color: #00ee00;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;">The Survival skill measures a mixture of your adaptation, knowledge of the land, ability to hunt, and expertise in cuisine. You can use your Survival skill to track other creatures (see page 1). To craft most food and drink recipes, your Survival skill must be equal to or more than its requirement. Additionally, learning more about a creature’s habits, type, or physical abilities might require a Survival check (at GM’s discretion)</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="unarmed" class="tab-pane fade" role="tabpanel" aria-labelledby="unarmed-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/unarmed.png"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col" style="margin-top: -80px;">
+                                                                        <p class="text-start" style="color: #00ee00;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;">The Unarmed skill measures your ability to punch, strike, wrestle, kick, elbow, knee, or grapple other creatures. When you make an unarmed attack roll, you add your Unarmed skill bonus to the attack roll. Unarmed attack rolls deal 1d4 + your Strength or Agility modifier bludgeoning damage, they critically hit when you roll a 20 on the attack roll and deal extra damage equal to double the total amount of damage. Unarmed attacks can be non-lethal.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="perks" class="tab-pane fade" role="tabpanel" aria-labelledby="item-1-3-tab">
+                                    <div class="container">
+                                        <div class="row text-center justify-content-center align-items-center">
+                                            <div class="col align-self-center" style="padding-bottom: 0px;margin-bottom: -50px;"><img class="img-fluid" src="assets/img/perk_cowboy.png"></div>
+                                        </div>
+                                        <div class="row text-center justify-content-center align-items-center">
+                                            <div class="col">
+                                                <h1 class="text-center" style="color: #00ee00;font-family: Monofonto;font-size: 200%;">Dutch</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="traits" class="tab-pane fade" role="tabpanel" aria-labelledby="item-1-3-tab">
+                                    <div class="container">
+                                        <div class="row text-center justify-content-center align-items-center">
+                                            <div class="col align-self-center" style="padding-bottom: 0px;margin-bottom: -50px;"><img class="img-fluid" src="assets/img/perk_cowboy.png"></div>
+                                        </div>
+                                        <div class="row text-center justify-content-center align-items-center">
+                                            <div class="col">
+                                                <h1 class="text-center" style="color: #00ee00;font-family: Monofonto;font-size: 200%;">Dutch</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="nav nav-pills nav-justified" role="tablist" style="padding-left: 15%;padding-right: 15%;padding-top: 2%;">
+                            <li class="nav-item d-inline-block"><a class="nav-link active" id="status-tab" role="tab" aria-controls="status" aria-selected="true" href="#status" data-bs-toggle="tab">Status</a></li>
+                            <li class="nav-item"><a class="nav-link" id="special-tab" role="tab" aria-controls="special" aria-selected="false" href="#special" data-bs-toggle="tab">S.P.E.C.I.A.L.</a></li>
+                            <li class="nav-item"><a class="nav-link" id="item-1-3-tab-1" role="tab" aria-controls="item-1-3" aria-selected="false" href="#skills" data-bs-toggle="tab">Skills</a></li>
+                            <li class="nav-item"><a class="nav-link disabled" id="item-1-3-tab-3" role="tab" aria-controls="item-1-3" aria-selected="false" href="#perks" data-bs-toggle="tab" style="color: var(--bs-secondary);">Perks</a></li>
+                            <li class="nav-item"><a class="nav-link disabled" id="item-1-3-tab-2" role="tab" aria-controls="item-1-3" aria-selected="false" href="#traits" data-bs-toggle="tab" style="color: var(--bs-secondary);">Traits</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="items" class="tab-pane fade" role="tabpanel" aria-labelledby="items-tab">
+                    <div class="card bg-transparent">
+                        <div class="card-header" style="padding-right: 0px;padding-left: 0px;padding-top: 0px;">
+                            <nav class="navbar navbar-expand" style="background: transparent;padding-top: 0px;">
+                                <div class="container">
+                                    <div class="row g-0 justify-content-between" style="width: 100%;">
+                                        <div class="col-2 text-truncate align-self-center">
+                                            <h1 class="text-center" style="margin: 10%;color: #00ee00;border-style: solid;font-family: Monofonto;font-size: 200%;">ITEMS</h1>
+                                        </div>
+                                        <div class="col-2 align-self-center">
+                                            <h1 class="text-truncate text-center" style="margin: 10%;color: #00ee00;font-family: Monofonto;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;font-size: 150%;">LD 10/10</h1>
+                                        </div>
+                                        <div class="col-2 align-self-center">
+                                            <h1 class="text-truncate text-center" style="margin: 10%;color: #00ee00;font-family: Monofonto;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;font-size: 150%;">AC 10</h1>
+                                        </div>
+                                        <div class="col-2 align-self-center">
+                                            <h1 class="text-truncate text-center" style="margin: 10%;color: #00ee00;font-family: Monofonto;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;font-size: 150%;">DT 10</h1>
+                                        </div>
+                                        <div class="col-3 align-self-center">
+                                            <h1 class="text-truncate text-center" style="margin: 10%;color: #00ee00;font-family: Monofonto;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;font-size: 150%;">Caps 150</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="card-body">
+                            <div id="nav-tabContent-4" class="tab-content">
+                                <div id="weapons" class="tab-pane fade show active" role="tabpanel" aria-labelledby="weapons-tab">
+                                    <div class="container" style="margin-top: -5%;">
+                                        <div class="row text-center justify-content-center align-items-center">
+                                            <div class="col-4 text-start align-self-center" style="padding-bottom: 0px;margin-bottom: -50px;">
+                                                <ul class="nav nav-pills flex-column" role="tablist">
+                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link active" id="pipe-revolver-tab" role="tab" aria-controls="pipe-revolver" aria-selected="true" href="#pipe-revolver" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Pipe Revolver</a></li>
+                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link" id="shiv-tab" role="tab" aria-controls="shiv" aria-selected="false" href="#shiv" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Shiv</a></li>
+                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link" id="dynamite-tab" role="tab" aria-controls="dynamite" aria-selected="false" href="#dynamite" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Dynamite (2)</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="card bg-transparent">
+                                                    <div class="card-body">
+                                                        <div id="nav-tabContent-7" class="tab-content">
+                                                            <div id="pipe-revolver" class="tab-pane fade show active" role="tabpanel" aria-labelledby="pipe-revolver-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/revolver.png" width="350px" height="350px"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col">
+                                                                        <div class="row">
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">AP - 5</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Attack - 0</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Damage - 1d6</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Range - x6/x10</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Crit - 20, x2</h5>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Ammo - 10</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Level of Decay - 3</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Mods - None</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Special Properties</h5>
+                                                                                <p style="color: #00ee00;">Breakable, Manual Reload</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="shiv" class="tab-pane fade" role="tabpanel" aria-labelledby="shiv-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/knife.png" width="350px" height="350px"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col">
+                                                                        <div class="row">
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">AP - 3</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Attack - 0</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Damage - 1d4</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Range - 0</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Crit - 20, x2</h5>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Ammo - N/A</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Level of Decay - 0</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Mods - None</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Special Properties</h5>
+                                                                                <p style="color: #00ee00;">Fragile</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="dynamite" class="tab-pane fade" role="tabpanel" aria-labelledby="dynamite-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/dynamite.png" width="350px" height="350px"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col">
+                                                                        <div class="row">
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">AP - 6</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Attack - 0</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Damage - 3d6</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Range -&nbsp; STR x 6</h5>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">AoE - 5ft/20ft</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Ammo - 2</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Special Properties</h5>
+                                                                                <p style="color: #00ee00;">Deafening: 10ft, Destructive</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="apparel" class="tab-pane fade" role="tabpanel" aria-labelledby="apparel-tab">
+                                    <div class="container" style="margin-top: -5%;">
+                                        <div class="row text-center justify-content-center align-items-center">
+                                            <div class="col-4 text-start align-self-center" style="padding-bottom: 0px;margin-bottom: -50px;">
+                                                <ul class="nav nav-pills flex-column" role="tablist">
+                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link active" id="cloth-armor-tab" role="tab" aria-controls="cloth-armor" aria-selected="true" href="#cloth-armor" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Cloth Armor</a></li>
+                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link" id="cowboy-hat-tab" role="tab" aria-controls="cowboy-hat" aria-selected="false" href="#cowboy-hat" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Cowboy Hat</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="card bg-transparent">
+                                                    <div class="card-body">
+                                                        <div id="nav-tabContent-5" class="tab-content">
+                                                            <div id="cloth-armor" class="tab-pane fade show active" role="tabpanel" aria-labelledby="cloth-armor-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/cloth_armor_cowboy.png" width="350px" height="350px"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col">
+                                                                        <div class="row">
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">AC - 10</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">DT - 0</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Upgrade Slots - 8</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Level of Decay - 0</h5>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col">
+                                                                                <p style="border-top: 2px solid var(--bs-link-hover-color);border-right: 1px solid #00ee00;color: var(--bs-link-hover-color);">Cloth armor doesn’t provide much protection. However it lends its simplicity to being light and having the most amount of upgrade slots. Most vault suits are considered cloth armor.</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="cowboy-hat" class="tab-pane fade" role="tabpanel" aria-labelledby="cowboy-hat-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/cowboy_hat.png" width="350px" height="350px"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col">
+                                                                        <p style="border-top: 2px solid var(--bs-link-hover-color);border-right: 1px solid var(--bs-link-hover-color);color: var(--bs-link-hover-color);">Just a good ol' cowboy hat, there is no eco-terrorism going on...</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="aid" class="tab-pane fade" role="tabpanel" aria-labelledby="aid-tab">
+                                    <div class="container" style="margin-top: -5%;">
+                                        <div class="row text-center justify-content-center align-items-center">
+                                            <div class="col-4 text-start align-self-center" style="padding-bottom: 0px;margin-bottom: -50px;">
+                                                <ul class="nav nav-pills flex-column" role="tablist">
+                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link active" id="robco-quick-fixit-2-tab" role="tab" aria-controls="robco-quick-fixit-2" aria-selected="true" href="#robco-quick-fixit-2" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">RobCo Quick Fix-it 1.0 (2)</a></li>
+                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link" id="overclock-hardware-tab" role="tab" aria-controls="overclock-hardware" aria-selected="false" href="#overclock-hardware" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Overclock hardware (2)</a></li>
+                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link" id="cache-clearer-tab" role="tab" aria-controls="cache-clearer" aria-selected="false" href="#cache-clearer" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Cache Clearer (2)</a></li>
+                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link" id="military-auto-tank-ai-upload-tab" role="tab" aria-controls="military-auto-tank-ai-upload" aria-selected="false" href="#military-auto-tank-ai-upload" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Military Auto-Tank AI Upload</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="card bg-transparent">
+                                                    <div class="card-body">
+                                                        <div id="nav-tabContent-6" class="tab-content">
+                                                            <div id="robco-quick-fixit-2" class="tab-pane fade show active" role="tabpanel" aria-labelledby="robco-quick-fixit-2-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/fixer.png" width="350px" height="350px"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col">
+                                                                        <p style="border-top: 2px solid var(--bs-link-hover-color);border-right: 1px solid var(--bs-link-hover-color);color: var(--bs-link-hover-color);">The RobCo Quick Fix-it 1.0 is a healing stim but for robots! You can spend 4 AP to use this item on yourself or another creature so long as they are next to you. If that creature is a robot or gen-2 synth; they heal a number of hit points equal to half their healing rate.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="overclock-hardware" class="tab-pane fade" role="tabpanel" aria-labelledby="overclock-hardware-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/overclock%20hardware.png" width="350px" height="350px"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col" style="color: var(--bs-link-hover-color);border-top: 2px solid var(--bs-link-hover-color) ;border-right-width: 1px;border-right-style: solid;">
+                                                                        <h5>Special Properties</h5>
+                                                                        <p>Super Stimulant</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="cache-clearer" class="tab-pane fade" role="tabpanel" aria-labelledby="cache-clearer-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/cache%20clearer.png" width="350px" height="350px"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col" style="color: var(--bs-link-hover-color);border-top: 2px solid var(--bs-link-hover-color) ;border-right-width: 1px;border-right-style: solid;">
+                                                                        <h5>Special Properties</h5>
+                                                                        <p>Anxiolytic, Stimulant</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="military-auto-tank-ai-upload" class="tab-pane fade" role="tabpanel" aria-labelledby="military-auto-tank-ai-upload-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/Military%20Auto-Tank%20AI%20Upload.png" width="350px" height="350px"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col" style="color: var(--bs-link-hover-color);border-top: 2px solid var(--bs-link-hover-color) ;border-right-width: 1px;border-right-style: solid;">
+                                                                        <h5>Special Properties</h5>
+                                                                        <p>Psychosis, Painkilling</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="misc" class="tab-pane fade" role="tabpanel" aria-labelledby="misc-tab">
+                                    <div class="container" style="margin-top: -5%;">
+                                        <div class="row text-center justify-content-center align-items-center">
+                                            <div class="col-4 text-start align-self-center" style="padding-bottom: 0px;margin-bottom: -50px;">
+                                                <ul class="nav nav-pills flex-column" role="tablist">
+                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link active" id="backpack-tab" role="tab" aria-controls="backpack" aria-selected="true" href="#backpack" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Backpack</a></li>
+                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link" id="flashlight-tab" role="tab" aria-controls="flashlight" aria-selected="false" href="#flashlight" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Flashlight</a></li>
+                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link" id="la-fantoma-tab" role="tab" aria-controls="la-fantoma" aria-selected="false" href="#la-fantoma" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">¡La Fantoma! skill magazine</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="card bg-transparent">
+                                                    <div class="card-body">
+                                                        <div id="nav-tabContent-8" class="tab-content">
+                                                            <div id="backpack" class="tab-pane fade show active" role="tabpanel" aria-labelledby="backpack-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/backpack.png" width="350px" height="350px"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col">
+                                                                        <p style="color: var(--bs-link-hover-color);border-top: 2px solid var(--bs-link-hover-color) ;border-right-width: 1px;border-right-style: solid;">A leather, burlap, or cloth bag with straps or a sling to grant you more space to store items on you. While you wear a backpack, your carry load increases by 50.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="flashlight" class="tab-pane fade" role="tabpanel" aria-labelledby="flashlight-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/flashlight.png" width="350px" height="350px"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col">
+                                                                        <p style="color: var(--bs-link-hover-color);border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;">You can spend 1 AP while holding this flashlight to create bright light in a 20 foot cone and dim light for an additional 20 feet. The light lasts for 8 hours so long as you spend 6 AP to load an energy cell into the flashlight.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="la-fantoma" class="tab-pane fade" role="tabpanel" aria-labelledby="la-fantoma-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/la%20fantoma.png" width="350px" height="350px"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col">
+                                                                        <p style="border-top: 2px solid var(--bs-link-hover-color);border-right: 1px solid var(--bs-link-hover-color);color: var(--bs-link-hover-color);">Your Sneak skill bonus increases by 1 until you rest.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="ammo" class="tab-pane fade" role="tabpanel" aria-labelledby="ammo-tab">
+                                    <div class="container" style="margin-top: -5%;">
+                                        <div class="row text-center justify-content-center align-items-center">
+                                            <div class="col-4 text-start align-self-center" style="padding-bottom: 0px;margin-bottom: -50px;">
+                                                <ul class="nav nav-pills flex-column" role="tablist">
+                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link active" id="ammo-44-tab" role="tab" aria-controls="ammo-44" aria-selected="true" href="#ammo-44" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">.44 Round (15)</a></li>
+                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link" id="energy-cell-tab" role="tab" aria-controls="energy-cell" aria-selected="false" href="#energy-cell" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Energy Cell</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="card bg-transparent">
+                                                    <div class="card-body">
+                                                        <div id="nav-tabContent-9" class="tab-content">
+                                                            <div id="ammo-44" class="tab-pane fade show active" role="tabpanel" aria-labelledby="ammo-44-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/44_magnum_round.png" width="350px" height="350px"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="energy-cell" class="tab-pane fade" role="tabpanel" aria-labelledby="energy-cell-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/energy%20cell.png" width="350px" height="350px"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="nav nav-pills nav-justified" role="tablist" style="padding-left: 15%;padding-right: 15%;padding-top: 2%;">
+                            <li class="nav-item d-inline-block"><a class="nav-link active" id="weapons-tab" role="tab" aria-controls="weapons" aria-selected="true" href="#weapons" data-bs-toggle="tab">Weapons</a></li>
+                            <li class="nav-item"><a class="nav-link" id="apparel-tab" role="tab" aria-controls="apparel" aria-selected="false" href="#apparel" data-bs-toggle="tab">Apparel</a></li>
+                            <li class="nav-item"><a class="nav-link" id="aid-tab" role="tab" aria-controls="aid" aria-selected="false" href="#aid" data-bs-toggle="tab">Aid</a></li>
+                            <li class="nav-item"><a class="nav-link" id="misc-tab" role="tab" aria-controls="misc" aria-selected="false" href="#misc" data-bs-toggle="tab" style="color: var(--bs-nav-link-hover-color);">Misc</a></li>
+                            <li class="nav-item"><a class="nav-link" id="ammo-tab" role="tab" aria-controls="ammo" aria-selected="false" href="#ammo" data-bs-toggle="tab" style="color: var(--bs-nav-link-hover-color);">Ammo</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="data" class="tab-pane fade" role="tabpanel" aria-labelledby="data-tab"></div>
+            </div>
+        </div>
+        <ul class="nav nav-pills nav-justified" role="tablist" style="background: var(--bs-secondary);padding-left: 10%;padding-right: 10%;height: 600px;">
+            <li class="nav-item"><a class="nav-link active" id="stats-tab" role="tab" aria-controls="stats" aria-selected="true" href="#stats" data-bs-toggle="tab" style="border-style: none;"><img src="assets/img/button.png" width="120" height="120"></a>
+                <h4 style="color: #000000;">STATS</h4>
+            </li>
+            <li class="nav-item"><a class="nav-link" id="items-tab" role="tab" aria-controls="items" aria-selected="false" href="#items" data-bs-toggle="tab" style="border-style: none;"><img src="assets/img/button.png" width="120" height="120"></a>
+                <h4 style="color: #000000;">ITEMS</h4>
+            </li>
+            <li class="nav-item"><a class="nav-link disabled" id="data-tab" role="tab" aria-controls="data" aria-selected="false" href="#data" data-bs-toggle="tab" style="border-style: none;"><img src="assets/img/button.png" width="120" height="120"></a>
+                <h4 style="color: #000000;">DATA</h4>
+            </li>
+        </ul>
+    </div>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/calculator.js"></script>
 </body>
