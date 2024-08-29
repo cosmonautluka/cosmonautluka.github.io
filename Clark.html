@@ -452,7 +452,7 @@
                                             <h1 class="text-truncate text-center" style="margin: 10%;color: #00ee00;font-family: Monofonto;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;font-size: 150%;">DT 0</h1>
                                         </div>
                                         <div class="col-3 align-self-center">
-                                            <h1 class="text-truncate text-center" style="margin: 10%;color: #00ee00;font-family: Monofonto;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;font-size: 150%;">Caps 150</h1>
+                                            <h1 class="text-truncate text-center" style="margin: 10%;color: #00ee00;font-family: Monofonto;border-top-width: 2px;border-top-style: solid;border-right-width: 1px;border-right-style: solid;font-size: 150%;">Caps 236</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -465,8 +465,10 @@
                                         <div class="row text-center justify-content-center align-items-center">
                                             <div class="col-4 text-start align-self-center" style="padding-bottom: 0px;margin-bottom: -50px;">
                                                 <ul class="nav nav-pills flex-column" role="tablist">
-                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link active" id="pipe-revolver-tab" role="tab" aria-controls="pipe-revolver" aria-selected="true" href="#pipe-revolver" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Pipe Pistol</a></li>
+                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link active" id="pipe-pistol-tab" role="tab" aria-controls="pipe-pistol" aria-selected="true" href="#pipe-pistol" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Pipe Pistol</a></li>
+                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link" id="laser-pistol-tab" role="tab" aria-controls="laser-pistol" aria-selected="true" href="#laser-pistol" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Laser Pistol</a></li>
                                                     <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link" id="shiv-tab" role="tab" aria-controls="shiv" aria-selected="false" href="#shiv" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Shiv</a></li>
+                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link" id="machete-tab" role="tab" aria-controls="machete" aria-selected="false" href="#machete" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Shiv</a></li>
                                                     <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link" id="dynamite-tab" role="tab" aria-controls="dynamite" aria-selected="false" href="#dynamite" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Dynamite (2)</a></li>
                                                 </ul>
                                             </div>
@@ -474,7 +476,7 @@
                                                 <div class="card bg-transparent">
                                                     <div class="card-body">
                                                         <div id="nav-tabContent-7" class="tab-content">
-                                                            <div id="pipe-revolver" class="tab-pane fade show active" role="tabpanel" aria-labelledby="pipe-revolver-tab">
+                                                            <div id="pipe-pistol" class="tab-pane fade show active" role="tabpanel" aria-labelledby="pipe-pistol-tab">
                                                                 <div class="row">
                                                                     <div class="col"><img class="img-fluid" src="assets/img/10mm_pistol.png" width="350px" height="350px"></div>
                                                                 </div>
@@ -510,6 +512,47 @@
                                                                             <div class="col">
                                                                                 <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Special Properties</h5>
                                                                                 <p style="color: #00ee00;">Breakable, Kickback, Semi-Automatic</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="laser-pistol" class="tab-pane fade" role="tabpanel" aria-labelledby="laser-pistol-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/weapons_laser_pistol.png" width="350px" height="350px"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col">
+                                                                        <div class="row">
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">AP - 4</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Attack - (+4)</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Damage - 1d8 -1&nbsp;</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Range - 4m - x10/x20</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Crit - 19, 20, x2, applies burning.</h5>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Ammo - 3 Energy Cells (90 shots)</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Level of Decay - 2</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Mods - None</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Special Properties</h5>
+                                                                                <p style="color: #00ee00;">Energy Weapon, Semi-Automatic</p>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -551,6 +594,47 @@
                                                                             <div class="col">
                                                                                 <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Special Properties</h5>
                                                                                 <p style="color: #00ee00;">Fragile</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="machete" class="tab-pane fade" role="tabpanel" aria-labelledby="machete-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/weapons_pre_order_machete.png" width="350px" height="350px"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col">
+                                                                        <div class="row">
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">AP - 4</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Attack - (+5)</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Damage - 2d4</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Range - 0</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Crit - 19, 20, x3. Bleeding.</h5>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Ammo - N/A</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Level of Decay - 2</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Mods - None</h5>
+                                                                            </div>
+                                                                            <div class="col">
+                                                                                <h5 style="border-top: 2px solid #00ee00;border-right: 1px solid #00ee00;color: #00ee00;">Special Properties</h5>
+                                                                                <p style="color: #00ee00;">Sturdy</p>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -666,6 +750,9 @@
                                                     <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link" id="overclock-hardware-tab" role="tab" aria-controls="overclock-hardware" aria-selected="false" href="#overclock-hardware" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Overclock hardware (2)</a></li>
                                                     <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link" id="cache-clearer-tab" role="tab" aria-controls="cache-clearer" aria-selected="false" href="#cache-clearer" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Cache Clearer (2)</a></li>
                                                     <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link" id="military-auto-tank-ai-upload-tab" role="tab" aria-controls="military-auto-tank-ai-upload" aria-selected="false" href="#military-auto-tank-ai-upload" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Military Auto-Tank AI Upload</a></li>
+                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link" id="iguana-tab" role="tab" aria-controls="iguana" aria-selected="false" href="#iguana" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Iguana on a stick</a></li>
+                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link" id="psycho-tab" role="tab" aria-controls="psycho" aria-selected="false" href="#psycho" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Psycho - (3)</a></li>
+                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link" id="dirty-water-tab" role="tab" aria-controls="dirty-water" aria-selected="false" href="#dirty-water" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Bottle of Dirty Water</a></li>
                                                 </ul>
                                             </div>
                                             <div class="col-8">
@@ -682,7 +769,7 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div id="robco-quick-fixit-2" class="tab-pane fade show active" role="tabpanel" aria-labelledby="robco-quick-fixit-2-tab">
+                                                            <div id="robco-quick-fixit-2" class="tab-pane fade" role="tabpanel" aria-labelledby="robco-quick-fixit-2-tab">
                                                                 <div class="row">
                                                                     <div class="col"><img class="img-fluid" src="assets/img/fixer.png" width="350px" height="350px"></div>
                                                                 </div>
@@ -722,6 +809,39 @@
                                                                     <div class="col" style="color: var(--bs-link-hover-color);border-top: 2px solid var(--bs-link-hover-color) ;border-right-width: 1px;border-right-style: solid;">
                                                                         <h5>Special Properties</h5>
                                                                         <p>Psychosis, Painkilling</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="iguana" class="tab-pane fade" role="tabpanel" aria-labelledby="iguana-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/items_iguana_stick.png" width="350px" height="350px"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col" style="color: var(--bs-link-hover-color);border-top: 2px solid var(--bs-link-hover-color) ;border-right-width: 1px;border-right-style: solid;">
+                                                                        <h5>Special Properties</h5>
+                                                                        <p>Tasty</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="psycho" class="tab-pane fade" role="tabpanel" aria-labelledby="psycho-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/item_psycho%20.png" width="350px" height="350px"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col" style="color: var(--bs-link-hover-color);border-top: 2px solid var(--bs-link-hover-color) ;border-right-width: 1px;border-right-style: solid;">
+                                                                        <h5>Special Properties</h5>
+                                                                        <p>Psychosis, Painkilling</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="dirty-water" class="tab-pane fade" role="tabpanel" aria-labelledby="dirty-water-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/items_water.png" width="350px" height="350px"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col" style="color: var(--bs-link-hover-color);border-top: 2px solid var(--bs-link-hover-color) ;border-right-width: 1px;border-right-style: solid;">
+                                                                        <h5>Special Properties</h5>
+                                                                        <p>Irradiated.</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -799,16 +919,17 @@
                                         <div class="row text-center justify-content-center align-items-center">
                                             <div class="col-4 text-start align-self-center" style="padding-bottom: 0px;margin-bottom: -50px;">
                                                 <ul class="nav nav-pills flex-column" role="tablist">
-                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link active" id="ammo-44-tab" role="tab" aria-controls="ammo-44" aria-selected="true" href="#ammo-44" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">10mm Round (15)</a></li>
+                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link active" id="ammo-10-tab" role="tab" aria-controls="ammo-10" aria-selected="true" href="#ammo-10" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">10mm Round (15)</a></li>
                                                     <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link" id="ammo-556-tab" role="tab" aria-controls="ammo-556" aria-selected="true" href="#ammo-556" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">5.56 Round (2)</a></li>
-                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link" id="energy-cell-tab" role="tab" aria-controls="energy-cell" aria-selected="false" href="#energy-cell" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Energy Cell</a></li>
+                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link" id="energy-cell-tab" role="tab" aria-controls="energy-cell" aria-selected="false" href="#energy-cell" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Energy Cell (3)</a></li>
+                                                    <li class="nav-item" style="margin-top: 5px;margin-bottom: 5px;"><a class="nav-link" id="ammo-9-tab" role="tab" aria-controls="ammo-9" aria-selected="false" href="#ammo-9" data-bs-toggle="tab" style="margin-top: 5px;margin-bottom: 5px;">Energy Cell (26)</a></li>
                                                 </ul>
                                             </div>
                                             <div class="col-8">
                                                 <div class="card bg-transparent">
                                                     <div class="card-body">
                                                         <div id="nav-tabContent-9" class="tab-content">
-                                                            <div id="ammo-44" class="tab-pane fade show active" role="tabpanel" aria-labelledby="ammo-44-tab">
+                                                            <div id="ammo-10" class="tab-pane fade show active" role="tabpanel" aria-labelledby="ammo-10-tab">
                                                                 <div class="row">
                                                                     <div class="col"><img class="img-fluid" src="assets/img/10mm_round.png" width="350px" height="350px"></div>
                                                                 </div>
@@ -821,6 +942,11 @@
                                                             <div id="energy-cell" class="tab-pane fade" role="tabpanel" aria-labelledby="energy-cell-tab">
                                                                 <div class="row">
                                                                     <div class="col"><img class="img-fluid" src="assets/img/energy%20cell.png" width="350px" height="350px"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="ammo-9" class="tab-pane fade" role="tabpanel" aria-labelledby="ammo-9-tab">
+                                                                <div class="row">
+                                                                    <div class="col"><img class="img-fluid" src="assets/img/items_9mm_ammo.png" width="350px" height="350px"></div>
                                                                 </div>
                                                             </div>
                                                         </div>
